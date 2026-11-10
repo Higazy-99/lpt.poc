@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="assets/94823.svg">
+<title>نموذج التقديم — طاقم LPT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="submission.css">
+</head>
+<body>
+
+<div class="sf-page">
+
+  <!-- ===== 18:8037 Hero ===== -->
+  <section class="sf-hero">
+    <div class="sf-hero__art"><img src="assets/0a268.jpg" alt=""></div>
+
+    <!-- 18:8040 navbar -->
+    <header class="sf-nav">
+      <div class="sf-nav__left">
+        <div class="sf-user">
+          <span class="sf-user__chev"><img src="assets/61683.svg" alt=""></span>
+          <span class="sf-user__name">شذى الآشي</span>
+          <span class="sf-user__av">ش</span>
+        </div>
+        <div class="sf-nav__lang">EN <span class="caret"><img src="assets/731ff.svg" alt=""></span></div>
+      </div>
+      <div class="sf-nav__logo">
+        <img src="assets/94823.svg" alt="LPT" style="position:absolute;left:153px;top:0;width:101px;height:36px">
+        <img src="assets/86784.svg" alt="هيئة الأدب والنشر والترجمة" style="position:absolute;left:138px;top:40px;width:131px;height:15.425px">
+      </div>
+    </header>
+
+    <!-- 18:8340 back to home -->
+    <button class="sf-back" data-goto="hackify-portal.html">رجوع للرئيسية</button>
+
+    <main id="main">
+    <!-- ===== 18:8275 Form card ===== -->
+    <form class="sf-card" id="sfForm">
+      <div class="sf-inner">
+        <h1 class="sf-title">ابدأ رحلتك الابتكارية - قدم فكرتك الأن!</h1>
+
+        <div class="sf-form">
+          <!-- 18:8286 step -->
+          <div class="sf-step">
+            <div class="sf-step__head">
+              <span class="sf-step__n">2/1</span>
+              <h2 class="sf-step__t">بيانات المتقدم</h2>
+            </div>
+            <div class="sf-progress"><span></span><span class="is-active"></span></div>
+          </div>
+
+          <!-- 18:8294 fields -->
+          <div class="sf-fields">
+            <div class="sf-field">
+              <label class="sf-field__l" for="sfFirstName">الإسم الأول</label>
+              <input class="sf-input" id="sfFirstName" type="text" placeholder="أدخل الإسم الأول.." required aria-describedby="sfError">
+            </div>
+
+            <div class="sf-field">
+              <label class="sf-field__l" for="sfChallenge">التحديات المهتم بها</label>
+              <div class="sf-select">
+                <select id="sfChallenge" name="challenge">
+                  <option value="">اختر..</option>
+                  <option>هاكاثون الذكاء الاصطناعي والترجمة الإبداعية</option>
+                  <option>تحدي النشر الرقمي التفاعلي</option>
+                  <option>دعوة تجريبية: أرشفة المخطوطات</option>
+                </select>
+                <span class="sf-select__ico" aria-hidden="true"><img src="assets/9aaaf.svg" alt=""></span>
+              </div>
+            </div>
+
+            <div class="sf-field">
+              <span class="sf-field__l" id="sfGenderLabel">الجنس</span>
+              <div class="sf-radio" id="sfGender" role="radiogroup" aria-labelledby="sfGenderLabel">
+                <label class="sf-radio__opt">
+                  <input type="radio" name="gender" value="f" class="sr-only">
+                  <span>أنثى</span><span class="sf-radio__dot" aria-hidden="true"></span>
+                </label>
+                <label class="sf-radio__opt is-selected">
+                  <input type="radio" name="gender" value="m" class="sr-only" checked>
+                  <span>ذكر</span><span class="sf-radio__dot" aria-hidden="true"></span>
+                </label>
+              </div>
+            </div>
+
+            <div class="sf-field">
+              <label class="sf-field__l" for="sfNationalId">رقم الهوية / الإقامة</label>
+              <input class="sf-input" id="sfNationalId" type="text" placeholder="أدخل رقم الهوية / الإقامة...">
+            </div>
+
+            <div class="sf-field">
+              <label class="sf-field__l" for="sfDate">تاريخ الميلاد (هجري)</label>
+              <div class="sf-date">
+                <span class="sf-date__ico" aria-hidden="true"><img src="assets/a5fd0.svg" alt=""></span>
+                <input class="sf-date__v" id="sfDate" type="text" value="2 ربيع الأول 1400 هجري">
+              </div>
+            </div>
+
+            <div class="sf-field">
+              <label class="sf-field__l" for="sfEmail">البريد الالكتروني</label>
+              <input class="sf-input" id="sfEmail" type="email" placeholder="أدخل البريد الالكتروني.." required aria-describedby="sfError" autocomplete="email">
+            </div>
+
+            <div class="sf-field">
+              <label class="sf-field__l" for="sfPhone">رقم الجوال</label>
+              <div class="sf-phone">
+                <span class="sf-phone__cc"><img src="assets/275e7.svg" alt=""><span>+966</span></span>
+                <input class="sf-phone__i" id="sfPhone" type="tel" placeholder="أدخل رقم الجوال.." required aria-describedby="sfError" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+
+          <p class="sf-error" id="sfError" role="alert"></p>
+
+          <!-- 18:8335 actions -->
+          <div class="sf-actions">
+            <button type="button" class="sf-btn-cancel" data-goto="hackify-portal.html">إلغاء</button>
+            <button type="submit" class="sf-btn-next">التالي</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+    </main>
+
+  <!-- ===== 18:8342 Footer ===== -->
+  <footer class="footer">
+    <div class="footer__logo">
+      <img src="assets/94823.svg" alt="LPT" style="position:absolute;left:101px;top:0;width:101px;height:36px">
+      <img src="assets/8cd69.svg" alt="هيئة الأدب والنشر والترجمة" style="position:absolute;left:0;top:44px;width:131px;height:15.425px">
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__links">
+        <span>سياسة الخصوصية</span>
+        <span>الشروط والاحكام</span>
+      </div>
+      <div class="footer__social">
+        <img src="assets/1ade5.svg" alt="X"><img src="assets/b4548.svg" alt="Instagram"><img src="assets/f7675.svg" alt="YouTube"><img src="assets/4707e.svg" alt="Facebook"><img src="assets/b2047.svg" alt="LinkedIn">
+      </div>
+      <p class="footer__copy">جميع الحقوق محفوظة لهيئة الأدب والنشر والترجمة © 2025</p>
+    </div>
+  </footer>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script src="flow.js"></script>
+<script>
+/* Submission form interactions */
+(function () {
+  // gender radios (native inputs, visual state mirrored on the label)
+  var gender = document.getElementById('sfGender');
+  gender && gender.addEventListener('change', function () {
+    gender.querySelectorAll('.sf-radio__opt').forEach(function (o) {
+      var input = o.querySelector('input');
+      o.classList.toggle('is-selected', !!(input && input.checked));
+    });
+  });
+
+  // submit → success state (end of the Hackify flow)
+  var form = document.getElementById('sfForm');
+  form && form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var name = document.getElementById('sfFirstName').value.trim();
+    var email = document.getElementById('sfEmail').value.trim();
+    var phone = document.getElementById('sfPhone').value.trim();
+    var err = document.getElementById('sfError');
+    if (!name || !email || !phone) {
+      if (err) { err.textContent = 'الرجاء تعبئة الاسم والبريد ورقم الجوال'; }
+      ['sfFirstName', 'sfEmail', 'sfPhone'].forEach(function (id) {
+        var el = document.getElementById(id);
+        if (el) el.setAttribute('aria-invalid', 'true');
+      });
+      window.showToast && showToast('الرجاء تعبئة الاسم والبريد ورقم الجوال');
+      return;
+    }
+    if (err) err.textContent = '';
+    window.showToast && showToast('تم إرسال طلبك بنجاح — سنرسل النتيجة على بريدك', 'success');
+    sessionStorage.setItem('lpt-submitted', '1');
+    setTimeout(function () { location.href = 'hackify-portal.html'; }, 1400);
+  });
+})();
+</script>
+</body>
+</html>

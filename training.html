@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="assets/94823.svg">
+<title>مركز التدريب — طاقم LPT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="screens.css">
+<link rel="stylesheet" href="training.css">
+<style>
+  /* 18:4625 strip asset (Frame4419) */
+  .i-banner__strip img { width:100%; height:100%; }
+</style>
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+
+<div class="i-page">
+
+  <!-- ===== 18:4626 Banner ===== -->
+  <div class="i-banner">
+    <div class="i-banner__bg"><img src="assets/14e7e.png" alt=""></div>
+    <div class="i-banner__strip"><img src="assets/7d298.svg" alt="" style="width:100%;height:100%"></div>
+
+    <!-- 18:4628 breadcrumb -->
+    <div class="i-banner__breadcrumb">
+      <span class="cur">مركز التدريب</span>
+      <span class="chev"><img src="assets/524b4.svg" alt=""></span>
+      <a href="home.html" class="back">الرئيسية</a>
+    </div>
+
+    <!-- 18:4647 navbar -->
+    <header class="nav">
+      <div class="nav__left">
+        <button class="btn-primary" id="loginBtn">تسجيل الدخول</button>
+        <div class="nav__lang">EN <span class="caret"><img src="assets/731ff.svg" alt=""></span></div>
+      </div>
+      <nav class="nav__links">
+        <a href="#" data-toast="قريباً: صفحة تواصل معنا">تواصل معنا</a>
+        <a href="training.html" class="is-active">مركز التدريب</a>
+        <a href="knowledge.html">مركز المعرفة</a>
+        <a href="hackify-portal.html">مختبر الابتكار Hackify</a>
+        <a href="#" data-toast="قريباً: عن المنصة">عن المنصة</a>
+        <a href="home.html">الرئيسية</a>
+      </nav>
+      <div class="nav__logo">
+        <img src="assets/94823.svg" alt="LPT" style="position:absolute;left:153px;top:0;width:101px;height:36px">
+        <img src="assets/06218.svg" alt="هيئة الأدب والنشر والترجمة" style="position:absolute;left:138px;top:44px;width:131px;height:15.425px">
+      </div>
+    </header>
+  </div>
+
+  <!-- ===== 18:5124 Panel ===== -->
+  <main class="i-panel">
+    <div class="kb-head" style="display:flex;flex-direction:column;gap:32px;width:100%">
+      <h1 class="i-panel__title">مركز التدريب</h1>
+      <div class="kb-controls">
+        <!-- 18:5128 sort -->
+        <button class="kb-control kb-control--sort" id="sortBtn">
+          <p>ترتيب حسب</p><span class="ico"><img src="assets/e76a5.svg" alt=""></span>
+        </button>
+        <!-- 18:5131 group -->
+        <div class="kb-group">
+          <button class="kb-control" id="levelBtn">
+            <span class="ico"><img src="assets/9aaaf.svg" alt=""></span><p>المستوى</p>
+          </button>
+          <label class="kb-control kb-control--search"><span class="sr-only">ابحث في الدورات التدريبية</span>
+            <input type="text" id="tcSearch" placeholder="ابحث عن...">
+            <span class="ico"><img src="assets/40377.svg" alt=""></span>
+          </label>
+        </div>
+      </div>
+    </div>
+
+    <!-- 18:5138 / 18:5212 Grid: 2 rows × 4 cards -->
+    <div class="tc-grid" id="tcGrid"></div>
+  </main>
+
+  <!-- ===== 18:4884 Footer ===== -->
+  <footer class="footer" style="position:relative;margin-top:88px">
+    <div class="footer__logo">
+      <img src="assets/94823.svg" alt="LPT" style="position:absolute;left:101px;top:0;width:101px;height:36px">
+      <img src="assets/06218.svg" alt="هيئة الأدب والنشر والترجمة" style="position:absolute;left:0;top:44px;width:131px;height:15.425px">
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__links">
+        <span>سياسة الخصوصية</span>
+        <span>الشروط والاحكام</span>
+      </div>
+      <div class="footer__social">
+        <img src="assets/1ade5.svg" alt="X"><img src="assets/b4548.svg" alt="Instagram"><img src="assets/f7675.svg" alt="YouTube"><img src="assets/4707e.svg" alt="Facebook"><img src="assets/b2047.svg" alt="LinkedIn">
+      </div>
+      <p class="footer__copy">جميع الحقوق محفوظة لهيئة الأدب والنشر والترجمة © 2025</p>
+    </div>
+  </footer>
+</div>
+
+<!-- 18:5287 robot FAB (63ad9.svg, no label on this page) -->
+<div class="chatbot-launch">
+  <a class="chatbot-fab" href="chatbot.html" data-chat-fab title="المساعد الذكي"><img src="assets/63ad9.svg" alt=""></a>
+</div>
+
+<!-- login overlay (shared) -->
+<div class="overlay" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="credentials">
+    <div class="credentials__head">
+      <button type="button" class="close" data-close="loginOverlay" aria-label="إغلاق">✕</button>
+      <div class="credentials__logo"><img src="assets/94823.svg" alt="LPT"></div>
+      <div class="credentials__title" id="loginTitle">تسجيل الدخول</div>
+      <p class="credentials__sub">ادخل إلى حسابك للوصول إلى محتوى المنصة ودورات التدريب ومختبر الابتكار.</p>
+    </div>
+    <div class="credentials__body">
+      <div class="credentials__tabs">
+        <button type="button" class="is-active" data-role="user">مستخدم نهائي</button>
+        <button type="button" data-role="admin">إدارة المنصة</button>
+      </div>
+      <div class="credentials__field">
+        <label for="loginEmail">البريد الإلكتروني</label>
+        <span class="cf-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="15" height="11" rx="2"/><path d="m3 6.5 7 4.5 7-4.5"/></svg></span>
+        <input type="email" id="loginEmail" placeholder="name@lpt.sa" autocomplete="email">
+      </div>
+      <div class="credentials__field">
+        <label for="loginPass">كلمة المرور</label>
+        <span class="cf-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8.5" width="12" height="8.5" rx="2"/><path d="M7 8.5V6a3 3 0 0 1 6 0v2.5"/></svg></span>
+        <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password">
+        <button type="button" class="cf-eye" id="loginEye" aria-label="إظهار كلمة المرور" aria-pressed="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10s3.4-5.5 8-5.5S18 10 18 10s-3.4 5.5-8 5.5S2 10 2 10Z"/><circle cx="10" cy="10" r="2.4"/></svg></button>
+      </div>
+      <div class="credentials__row">
+        <label class="credentials__check"><input type="checkbox" id="loginRemember"> تذكرني</label>
+        <button type="button" class="credentials__link" data-toast="سيتم إرسال رابط استعادة كلمة المرور إلى بريدك">نسيت كلمة المرور؟</button>
+      </div>
+      <p class="credentials__error" id="loginError" role="alert"></p>
+      <button class="credentials__submit" id="loginSubmit">دخول</button>
+      <p class="credentials__hint">نموذج تفاعلي — أي بيانات مقبولة لتجربة المسار.</p>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script src="flow.js"></script>
+<script src="chat.js"></script>
+<script src="training.js"></script>
+</body>
+</html>

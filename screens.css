@@ -1,0 +1,82 @@
+/* ============================================================
+   Knowledge Center (18:3328) — inner page structure shared by
+   all later inner screens (banner, panel, cards, controls)
+   ============================================================ */
+
+/* Page shell (in-flow) */
+.i-page { position: relative; width: 1920px; background: #F8F8F8; }
+.i-banner {
+  position: relative; width: 1920px; height: 363px; overflow: hidden;
+  background: #012535;
+}
+.i-banner__bg { position: absolute; left: 50%; top: calc(50% - 43.5px); transform: translate(-50%, -50%); width: 1920px; height: 1118px; }
+.i-banner__bg img { width: 100%; height: 100%; object-fit: cover; object-position: bottom; }
+.i-banner__bg::after { content: ""; position: absolute; inset: 0; background: rgba(15, 40, 55, .9); }
+.i-banner__strip { position: absolute; left: -10.42%; right: 66.25%; top: 67.49%; bottom: -50.76%; z-index: 1; }
+.i-banner__breadcrumb {
+  position: absolute; left: 1692px; top: 200px; z-index: 3;
+  display: flex; flex-direction: row-reverse; gap: 4px; align-items: center; justify-content: flex-end;
+  color: #E9EEEC; font-size: 16px; line-height: 21px;
+}
+.i-banner__breadcrumb .cur { color: rgba(233,238,236,.6); }
+.i-banner__breadcrumb .chev { width: 16px; height: 16px; }
+.i-banner__breadcrumb .chev img { width: 16px; height: 16px; }
+
+/* Content panel (overlaps banner) */
+.i-panel {
+  position: relative; z-index: 4; width: 1744px; margin: -94px auto 0;
+  background: var(--white); border-radius: var(--r-4);
+  padding: 40px; display: flex; flex-direction: column; gap: 40px; align-items: stretch;
+  overflow: hidden;
+}
+.i-panel__title { font-size: 32px; font-weight: var(--w-bold); color: var(--tangaroa-100); line-height: 1.627; text-align: right; }
+
+/* Filter.Controls */
+.kb-controls { display: flex; align-items: center; justify-content: space-between; width: 100%; }
+.kb-control { display: flex; gap: 12px; align-items: center; justify-content: flex-end;
+  background: var(--white); border: 1px solid var(--tangaroa-10); border-radius: var(--r-4);
+  padding: 16px 24px; cursor: pointer; }
+.kb-control .ico { width: 24px; height: 24px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.kb-control .ico img { width: auto; height: auto; max-width: 24px; max-height: 24px; }
+.kb-control--sort p { font-size: 16px; line-height: 19.2px; color: var(--neutral-200); text-align: right; }
+.kb-group { display: flex; gap: 12px; align-items: center; }
+.kb-group .kb-control {}
+.kb-group .kb-control p { font-size: 16px; line-height: 19.2px; color: var(--tangaroa-70); text-align: right; }
+.kb-control--search { width: 309px; }
+.kb-control--search input { border: 0; outline: none; font-family: var(--font-effra); font-size: 16px;
+  color: var(--tangaroa-100); background: transparent; width: 100%; text-align: right; order: -1; padding: 0 8px 0 0; }
+.kb-control--search input::placeholder { color: var(--neutral-200); }
+
+.kb-grid { display: flex; flex-direction: column; gap: 24px; align-items: stretch; width: 100%; }
+.kb-row { display: flex; gap: 24px; align-items: flex-start; width: 100%; }
+
+/* Card */
+.kb-card {
+  flex: 1 0 0; min-width: 0; background: var(--white); border: 1px solid var(--tangaroa-10);
+  border-radius: var(--r-4); padding: 32px; overflow: hidden; display: flex; flex-direction: column;
+  gap: 24px; align-items: flex-end; justify-content: center; cursor: pointer;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.kb-card:hover { box-shadow: 0 8px 24px rgba(15,40,55,.08); transform: translateY(-2px); }
+.kb-card__artcol { display: flex; flex-direction: column; gap: 24px; align-items: flex-end; justify-content: center; width: 100%; }
+.kb-art { position: relative; height: 151px; border-radius: var(--r-4); overflow: hidden; width: 100%; }
+.kb-art__c { position: absolute; transform: translateX(-50%); overflow: hidden; }
+.kb-art__c img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.kb-art--f0e8ec { background: var(--pomp-10); }
+.kb-art--f4f8f8 { background: #F4F8F8; }
+.kb-art--fdeeeb { background: var(--outr-10); }
+.kb-card__txt { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; text-align: right; width: 100%; }
+.kb-card__t { font-weight: var(--w-bold); font-size: 18px; color: var(--tangaroa-100); line-height: normal; text-align: right; }
+.kb-card__t--min { width: min-content; min-width: 100%; }
+.kb-card__e { font-size: 14px; color: var(--tangaroa-80); line-height: normal; text-align: right; width: 100%; }
+.kb-card__e--nowrap { white-space: nowrap; width: auto; max-width: 100%; }
+.kb-card__foot { display: flex; gap: 8px; align-items: center; justify-content: flex-end; width: 100%; }
+.kb-card__cat { font-size: 14px; color: var(--tangaroa-100); line-height: normal; text-align: right; white-space: nowrap; order: -1; }
+.kb-ico { width: 28px; height: 28px; border-radius: 198.582px; overflow: hidden; position: relative; flex-shrink: 0;
+  border: 0.993px solid var(--white); }
+.kb-ico__sym { position: absolute; width: 24px; height: 24px; left: calc(50% + 4px); top: calc(50% + 4px);
+  transform: translate(-50%, -50%); overflow: hidden; }
+.kb-ico__sym img { position: absolute; inset: 0; width: 100%; height: 100%; }
+
+/* Robot fab on knowledge page */
+.chatbot-launch--inner {}

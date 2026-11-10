@@ -1,0 +1,71 @@
+/* ============================================================
+   Training Center (18:4625) — course cards grid
+   ============================================================ */
+
+/* Grid: header → row1 → row2, gap 40 (18:5124) */
+.tc-grid { display: flex; flex-direction: column; gap: 40px; width: 100%; }
+.tc-row { display: flex; gap: 24px; align-items: flex-start; width: 100%; }
+
+/* Card (18:5140 ...) */
+.tc-card {
+  flex: 1 0 0; width: 0; min-width: 0;
+  background: var(--white); border: 1px solid var(--tangaroa-10);
+  border-radius: var(--r-4); padding: 32px; overflow: hidden;
+  display: flex; flex-direction: column; gap: 24px;
+  align-items: flex-end; justify-content: center;
+  transition: box-shadow .2s ease, transform .2s ease; cursor: pointer;
+}
+.tc-card:hover { box-shadow: 0 8px 24px rgba(15,40,55,.08); transform: translateY(-2px); }
+
+/* Top stack: base images + gradient + top image, h 423 (18:5142) */
+.tc-art {
+  position: relative; height: 423px; width: 100%; overflow: hidden;
+  border-radius: var(--r-4);
+}
+.tc-art > * { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.tc-art__grad {
+  position: absolute; inset: 0; pointer-events: none;
+  background: linear-gradient(135.3465deg, rgba(16,24,32,0) 9.6334%, rgba(16,24,32,0.2) 78.088%);
+}
+
+/* Text block (18:5143): gap 12, right aligned */
+.tc-card__txt {
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-end;
+  text-align: right; width: 100%;
+}
+.tc-card__t { font-weight: var(--w-bold); font-size: 18px; color: var(--tangaroa-100); text-align: right; width: 100%; line-height: normal; }
+.tc-card__e { font-size: 14px; color: var(--tangaroa-80); text-align: right; width: 100%; line-height: normal; }
+
+/* Bottom block: meta row + CTA (18:5146) */
+.tc-card__bottom { display: flex; flex-direction: column; gap: 24px; align-items: flex-start; width: 100%; }
+
+/* Meta row (18:5147): [6 ساعات + clock] | [مبتدئ – متوسط] [signal badge] */
+.tc-meta { display: flex; gap: 8px; align-items: center; justify-content: flex-end; width: 100%; }
+.tc-meta__seg { display: flex; gap: 8px; align-items: center; justify-content: flex-end; }
+.tc-meta__txt { font-size: 14px; color: var(--tangaroa-100); text-align: right; white-space: nowrap; line-height: normal; }
+.tc-meta__clock { width: 16px; height: 16px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.tc-meta__clock img { width: 14.333px; height: 14.333px; }
+.tc-meta__bar { font-size: 14px; color: var(--tangaroa-20, #CFD4D7); line-height: normal; }
+
+/* Signal-level badge (18:5154): 28px Tangaroa circle */
+.tc-level {
+  width: 28px; height: 28px; flex-shrink: 0; border-radius: 198.582px;
+  background: var(--tangaroa-100); border: 0.993px solid var(--white);
+  overflow: hidden; position: relative;
+}
+.tc-level img {
+  position: absolute; width: 19.1px; height: 7.1px;
+  left: calc(50% + 4px); top: calc(50% + 4px);
+  transform: translate(-50%, -50%);
+}
+
+/* CTA (18:5156): full width, h 48 */
+.tc-cta {
+  display: flex; align-items: center; justify-content: center; width: 100%;
+  height: 48px; padding: 16px 40px;
+  background: var(--outr-90); color: var(--outr-10);
+  font-family: var(--font-effra); font-weight: var(--w-bold); font-size: 16px;
+  border: 0; border-radius: var(--r-4); cursor: pointer; white-space: nowrap;
+  transition: background .15s ease;
+}
+.tc-cta:hover { background: var(--outr-100); }

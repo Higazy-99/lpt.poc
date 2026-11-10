@@ -1,0 +1,99 @@
+/* ============================================================
+   Chatbot (18:2133 closed / 18:2510 replies / 18:2919 reply)
+   Frame 1920 x 1122 — home hero with a dark overlay + chat panel
+   ============================================================ */
+
+.cb-page { position: relative; width: 1920px; height: 1122px; background: var(--tangaroa-100); overflow: hidden; }
+.cb-overlay { position: absolute; inset: 0; background: rgba(15, 40, 55, .7); z-index: 3; }
+
+/* ---------- Chat panel (18:2441) ---------- */
+.cb-panel {
+  position: absolute; left: 88px; top: 504px; width: 378px; height: 430px;
+  background: var(--white); border-radius: 8px; overflow: hidden; z-index: 10;
+  box-shadow: 0 12px 40px rgba(15, 40, 55, .35);
+}
+.cb-panel.is-hidden { display: none; }
+.cb-panel__deco { position: absolute; left: calc(50% - 251.43px); top: -91px; width: 141.149px; height: 396px; overflow: hidden; }
+.cb-panel__deco img { width: 396px; height: 141.149px; transform: rotate(-90deg); transform-origin: top left; }
+
+/* header (18:2456) */
+.cb-head {
+  position: absolute; top: 0; right: 0; width: 378px; background: var(--white-smoke);
+  padding: 16px; display: flex; align-items: center; justify-content: space-between; overflow: hidden;
+}
+.cb-head__tools { display: flex; gap: 12px; align-items: center; }
+.cb-head__tool { width: 20px; height: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.cb-head__tool img { width: 20px; height: 20px; }
+.cb-head__title { display: flex; gap: 8px; align-items: center; justify-content: flex-end; width: 206px; }
+.cb-head__t { font-size: 16px; font-weight: var(--w-bold); line-height: 19.2px; color: var(--tangaroa-100); white-space: nowrap; }
+.cb-head__av { width: 16px; height: 16px; border-radius: 2500px; background: var(--outr-100); overflow: hidden; position: relative; }
+.cb-head__av img { position: absolute; left: 50%; top: calc(50% + 2.57px); transform: translate(-50%, -50%); width: 11.167px; height: 15.185px; }
+
+/* empty state (18:2495) */
+.cb-intro {
+  position: absolute; left: calc(50% + .5px); top: 84px; transform: translateX(-50%);
+  width: 121px; display: flex; flex-direction: column; gap: 12px; align-items: center; text-align: center;
+}
+.cb-intro__ico { width: 68px; height: 68px; display: flex; align-items: center; justify-content: center; }
+.cb-intro__ico img { width: 60.917px; height: 58.084px; }
+.cb-intro__t { font-size: 16px; font-weight: var(--w-bold); line-height: 19.2px; color: var(--tangaroa-100); white-space: nowrap; }
+
+/* quick questions (18:2498) */
+.cb-questions {
+  position: absolute; left: calc(50% + .5px); top: 208px; transform: translateX(-50%);
+  width: 201px; display: flex; flex-direction: column; gap: 12px; align-items: center;
+}
+.cb-question {
+  min-height: 32px; padding: 8px 16px; border-radius: 1000px; background: var(--white-smoke);
+  color: #000; font-family: var(--font-effra); font-size: 12px; line-height: 19.2px;
+  display: flex; align-items: center; justify-content: center; cursor: pointer; border: 0;
+  width: 100%; text-align: right; direction: rtl;
+}
+.cb-question:hover { background: var(--tangaroa-10); }
+
+/* conversation (18:2510 / 18:2919) */
+.cb-thread {
+  position: absolute; left: 20px; top: 84px; width: 338px;
+  display: flex; flex-direction: column; gap: 12px; align-items: flex-start;
+}
+.cb-msg {
+  max-width: 100%; padding: 8px 16px; border-radius: 12px; font-size: 14px; line-height: 20px;
+  background: var(--white-smoke); color: var(--tangaroa-100); text-align: right; direction: rtl;
+}
+.cb-msg--user { align-self: flex-end; background: var(--outr-10); }
+.cb-msg--bot { align-self: flex-start; display: flex; gap: 8px; align-items: flex-start; background: transparent; padding: 0; }
+.cb-msg--bot .cb-msg__bubble { background: var(--white-smoke); border-radius: 12px; padding: 8px 16px; }
+.cb-msg__av { width: 62px; height: 62px; border-radius: 50%; overflow: hidden; flex-shrink: 0; position: relative; }
+.cb-msg__av img { position: absolute; width: 72px; height: 72px; left: 50%; top: 50%; transform: translate(-50%, -50%); object-fit: cover; }
+
+/* input row (18:2505) */
+.cb-input-row {
+  position: absolute; left: 20px; top: 371px; width: 338px; display: flex; gap: 8px; align-items: center;
+}
+.cb-send {
+  width: 40px; height: 40px; border: 0; border-radius: var(--r-4); background: var(--outr-100);
+  display: flex; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0;
+}
+.cb-send:hover { background: var(--outr-90); }
+.cb-send img { width: 20px; height: 20px; }
+.cb-input {
+  flex: 1 0 0; min-width: 0; height: 40px; border: 1px solid var(--tangaroa-10); border-radius: var(--r-4);
+  background: var(--white); padding: 0 16px; font-family: var(--font-effra); font-size: 14px;
+  color: var(--tangaroa-100); outline: none; text-align: right; direction: rtl;
+}
+.cb-input::placeholder { color: var(--tangaroa-70); }
+.cb-input:focus { border-color: var(--tangaroa-70); }
+
+/* FAB (18:2409) */
+.cb-fab {
+  position: absolute; left: 88px; top: 974px; width: 64px; height: 64px; border-radius: 10000px;
+  background: var(--outr-100); border: 9px solid rgba(235, 90, 60, .3); overflow: hidden;
+  display: flex; align-items: center; justify-content: center; cursor: pointer; z-index: 11;
+}
+.cb-fab img { position: absolute; left: calc(50% - .33px); top: calc(50% + 10.29px);
+  transform: translate(-50%, -50%); width: 44.668px; height: 60.741px; }
+
+/* ---------- Widget mode (opens inside any page) ---------- */
+.cb-panel.is-widget { position: fixed; left: 88px; bottom: 128px; top: auto; z-index: 120; }
+.cb-panel.is-widget .cb-thread { max-height: 250px; overflow-y: auto; }
+.chatbot-launch .chatbot-fab { cursor: pointer; border: 0; padding: 0; }

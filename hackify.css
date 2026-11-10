@@ -1,0 +1,181 @@
+/* ============================================================
+   Hackify Portal (18:6052) — frame 1920 x 4604
+   ============================================================ */
+
+.hk-page { position: relative; width: 1920px; height: 4604px; background: var(--white); }
+
+/* ---------- Hero (18:6053) ---------- */
+.hk-hero {
+  position: absolute; top: 0; left: 0; width: 1920px; height: 1237px;
+  background: var(--tangaroa-100); overflow: hidden;
+}
+.hk-hero__art {
+  position: absolute; left: 50%; top: calc(50% + 39px); transform: translate(-50%, -50%);
+  width: 2300.829px; height: 1315px; display: flex; align-items: center; justify-content: center;
+  mix-blend-mode: overlay;
+}
+.hk-hero__art img {
+  width: 1315px; height: 2300.829px; object-fit: cover; opacity: .3; transform: rotate(-90deg);
+}
+/* The "Whisk" layer in Figma is a soft organic shape (luminosity blend over the
+   navy), not the people photo — the neo-memphis art alone produces the waves. */
+.hk-hero__whisk { display: none; }
+.hk-hero__photo {
+  position: absolute; bottom: 89px; left: 50%; transform: translateX(-50%);
+  width: 1688px; height: 501px; border-radius: 12px; overflow: hidden;
+}
+.hk-hero__photo img { position: absolute; height: 232.57%; width: 103.55%; left: -1.78%; top: -71.48%; object-fit: cover; max-width: none; }
+.hk-hero__photo::after { content: ""; position: absolute; inset: 0; background: rgba(233, 82, 69, .1); }
+.hk-hero__copy {
+  position: absolute; top: 185px; left: calc(50% + .5px); transform: translateX(-50%);
+  display: flex; flex-direction: column; gap: 48px; align-items: center; text-align: center; z-index: 3;
+}
+.hk-hero__title { font-size: 140px; font-weight: var(--w-bold); color: var(--white); line-height: 172px; white-space: nowrap; }
+/* 18:6295 — title + description block, gap 24 */
+.hk-hero__copy > div { display: flex; flex-direction: column; gap: 24px; align-items: center; }
+.hk-hero__desc { font-size: 24px; font-weight: var(--w-regular); color: rgba(255, 255, 255, .7); width: 758px; line-height: 36.4px; }
+/* 18:6058 — white login button (this page only), 51px tall like the Figma frame */
+.hk-page .nav .btn-primary { background: var(--white); color: var(--tangaroa-100); height: 51px; padding: 0 40px; align-items: center; }
+.hk-page .nav .btn-primary:hover { background: var(--outr-10); }
+/* 18:6298 — CTA 236 x 51 */
+.hk-hero__cta {
+  width: 236px; height: 51px; padding: 0 40px; border: 0; border-radius: var(--r-4);
+  background: var(--outr-100); color: var(--white);
+  font-family: var(--font-effra); font-weight: var(--w-bold); font-size: 16px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+}
+.hk-hero__cta:hover { background: var(--outr-90); }
+
+/* ---------- Section title (18:6578) ---------- */
+.hk-sec-title {
+  position: absolute; top: 1420.5px; left: calc(50% + 872px); transform: translate(-100%, -50%);
+  font-size: 72px; font-weight: var(--w-bold); color: var(--tangaroa-100); line-height: 110.4px;
+  white-space: nowrap; text-align: right; z-index: 5;
+}
+
+/* ---------- Challenges carousel (18:6579) ---------- */
+.hk-challenges { position: absolute; left: -245px; top: 1540px; width: 2077px; height: 586px; }
+.hk-challenge {
+  position: absolute; top: 0; width: 671px; height: 586px; border-radius: var(--r-4); overflow: hidden;
+  box-shadow: 0px 4px 48px 0px rgba(15, 40, 55, .2);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.hk-challenge__art {
+  position: absolute; left: calc(50% - 61.5px); top: calc(50% + 46px); transform: translate(-50%, -50%);
+  width: 824px; height: 824px; mix-blend-mode: difference; pointer-events: none;
+}
+.hk-challenge__art img { width: 100%; height: 100%; object-fit: cover; opacity: .2; }
+.hk-challenge--orange .hk-challenge__art { left: calc(50% + .5px); top: 50%; width: 692px; height: 692px; }
+.hk-challenge__body {
+  position: relative; z-index: 2; display: flex; flex-direction: column; gap: 32px; align-items: flex-end;
+  width: 575px; margin: 0 auto; color: var(--white);
+}
+.hk-challenge__tags { display: flex; gap: 8px; align-items: center; }
+.hk-tag {
+  display: flex; align-items: center; justify-content: center; height: 40px; padding: 8px;
+  border-radius: 1000px; font-size: 20px; line-height: 36px; white-space: nowrap;
+}
+.hk-tag--carrot { background: rgba(255, 150, 25, .1); border: 1px solid var(--carrot); color: var(--carrot); }
+.hk-tag--orange { background: rgba(235, 90, 60, .1); border: 1px solid var(--outr-100); color: var(--outr-100); }
+.hk-tag--glass { background: rgba(255, 255, 255, .1); border: 1px solid var(--white); color: var(--white); backdrop-filter: blur(2px); }
+.hk-challenge__deadline { font-size: 16px; line-height: 20px; color: var(--white); white-space: nowrap; }
+.hk-challenge__main { display: flex; flex-direction: column; gap: 32px; align-items: flex-end; width: 100%; }
+.hk-challenge__t { font-size: 56px; font-weight: var(--w-bold); line-height: 76.8px; color: var(--white); text-align: right; width: 575px; }
+.hk-challenge__e { font-size: 20px; line-height: 36px; color: var(--white); text-align: right; }
+.hk-btn-white {
+  display: flex; align-items: center; justify-content: center; height: 56px; width: 281px; padding: 20px 8px;
+  background: var(--white); color: #000; border: 0; border-radius: var(--r-4);
+  font-family: var(--font-effra); font-weight: var(--w-bold); font-size: 16px; line-height: 24px;
+  cursor: pointer; white-space: nowrap;
+}
+.hk-btn-white:hover { background: var(--outr-10); }
+
+/* Carousel pager (18:6625) */
+.hk-pager {
+  position: absolute; left: 50%; transform: translateX(-50%); bottom: 2342px;
+  display: flex; gap: 8px; align-items: center; z-index: 5;
+}
+.hk-pager button {
+  width: 64px; height: 64px; border: 0; border-radius: 1000px; cursor: pointer;
+  display: flex; align-items: center; justify-content: center; padding: 8px;
+}
+.hk-pager .is-next { background: var(--outr-100); }
+.hk-pager .is-prev { background: rgba(235, 90, 60, .1); }
+.hk-pager .arrow { display: block; width: 24px; height: 24px; transform: rotate(180deg) scaleY(-1); }
+/* 18:6629: the ghost button carries a double flip → its arrow stays pointing right */
+.hk-pager .is-prev .arrow { transform: none; }
+.hk-pager img { width: 24px; height: 24px; }
+
+/* ---------- Orange band (18:6630) ---------- */
+.hk-band {
+  position: absolute; top: 2363px; left: 50%; transform: translateX(-50%);
+  width: 1616px; height: 665px; border-radius: 8px; overflow: hidden;
+  background: var(--outr-100);
+  display: flex; flex-direction: column; gap: 88px; align-items: flex-end; justify-content: flex-end;
+  padding: 96px 96px 120px;
+}
+.hk-band__art {
+  position: absolute; left: calc(50% + .5px); top: calc(50% + 121.5px); transform: translate(-50%, -50%);
+  width: 2194.098px; height: 1254px; display: flex; align-items: center; justify-content: center;
+  mix-blend-mode: multiply; pointer-events: none;
+}
+.hk-band__art img { width: 1254px; height: 2194.098px; object-fit: cover; opacity: .2; transform: rotate(-90deg); }
+.hk-band__photo {
+  position: absolute; left: -21px; bottom: -107px; width: 1375px; height: 750px; object-fit: cover; pointer-events: none;
+}
+.hk-band__copy { position: relative; z-index: 2; display: flex; flex-direction: column; gap: 32px; align-items: flex-end; width: 100%; }
+.hk-band__t { font-size: 64px; font-weight: var(--w-bold); color: var(--outr-10); line-height: normal; text-align: right; }
+.hk-band__e { font-size: 24px; font-weight: var(--w-regular); color: var(--outr-30); width: 551px; text-align: right; }
+.hk-band__cta { position: relative; z-index: 2; width: 310px; height: 56px; border: 0; }
+
+/* ---------- CTA section (18:6300) ---------- */
+.hk-cta {
+  position: absolute; top: 3188px; left: 0; width: 1920px; height: 1054px;
+  background: var(--tangaroa-100); overflow: hidden;
+}
+.hk-cta__art {
+  position: absolute; bottom: 0; left: calc(50% + 164px); transform: translateX(-50%);
+  width: 2300.829px; height: 1315px; display: flex; align-items: center; justify-content: center;
+  mix-blend-mode: overlay; pointer-events: none;
+}
+.hk-cta__art img { width: 1315px; height: 2300.829px; object-fit: cover; opacity: .1; transform: rotate(-90deg); }
+.hk-cta__whisk { display: none; }
+.hk-cta__photo {
+  position: absolute; left: calc(50% - 457px); top: calc(50% + .5px); transform: translate(-50%, -50%);
+  width: 776px; height: 843px; border-radius: 12px; overflow: hidden;
+}
+.hk-cta__photo img { position: absolute; height: 173.02%; width: 282.33%; left: -154.53%; top: -47.44%; object-fit: cover; max-width: none; }
+.hk-cta__photo::after { content: ""; position: absolute; inset: 0; background: rgba(233, 82, 69, .1); }
+.hk-cta__strips {
+  position: absolute; bottom: -107px; left: 50%; transform: translateX(-50%);
+  width: 1853px; height: 266px;
+}
+.hk-cta__strips img { width: 100%; height: 100%; }
+
+/* Signup form (18:6318) — pinned to the Figma coordinates:
+   copy at y0, fields block at y212, submit button at y377 */
+.hk-form {
+  position: absolute; left: 1245px; top: 147px; width: 587px; height: 645px;
+  display: block; z-index: 3;
+}
+.hk-form__copy { position: absolute; top: 0; left: 0; right: 0; display: flex; flex-direction: column; gap: 24px; align-items: flex-end; }
+.hk-form__t { font-size: 80px; font-weight: var(--w-bold); color: var(--white); line-height: 95px; text-align: right; width: 100%; white-space: nowrap; }
+.hk-form__e { font-size: 24px; font-weight: var(--w-regular); color: rgba(255, 255, 255, .7); text-align: right; width: 100%; line-height: 29px; }
+.hk-form__fields { position: absolute; top: 212px; left: 0; right: 0; display: flex; flex-direction: column; gap: 24px; align-items: flex-end; }
+.hk-field { display: flex; flex-direction: column; gap: 16px; align-items: flex-end; width: 100%; }
+.hk-field__l { font-size: 16px; font-weight: var(--w-regular); color: var(--white); text-align: right; width: 100%; }
+.hk-field__i {
+  width: 100%; height: 56px; border-radius: var(--r-4); border: 1px solid rgba(255, 255, 255, .1);
+  background: rgba(255, 255, 255, .1); backdrop-filter: blur(2px);
+  padding: 0 23px; color: var(--white); font-family: var(--font-effra); font-size: 16px; outline: none;
+  direction: rtl; text-align: right;
+}
+.hk-field__i::placeholder { color: rgba(255, 255, 255, .5); direction: rtl; }
+.hk-field__i:focus { border-color: rgba(255, 255, 255, .3); }
+.hk-form__submit {
+  position: absolute; top: 377px; right: 0; margin: 0;
+  width: 293px; height: 56px; border: 0; border-radius: var(--r-4);
+  background: var(--outr-100); color: var(--white);
+  font-family: var(--font-effra); font-weight: var(--w-bold); font-size: 16px; cursor: pointer;
+}
+.hk-form__submit:hover { background: var(--outr-90); }

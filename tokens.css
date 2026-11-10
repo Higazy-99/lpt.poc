@@ -1,0 +1,62 @@
+/* ============================================================
+   Hackify Prototype — Design tokens (exact from Figma variables)
+   File: DVNjS8pMMkC1xkbOararnm  —  Section 18:9070 "هكيفاي"
+   ============================================================ */
+:root {
+  /* Primary Color / Tangaroa */
+  --tangaroa-100: #0F2837;
+  --tangaroa-80:  #3F535F;
+  --tangaroa-70:  #576873;
+  --tangaroa-40:  #9FA9AF;
+  --tangaroa-30:  #B7BFC3;
+  --tangaroa-10:  #E7E9EB;
+
+  /* Primary Color / Outrageous Orange (CTA) */
+  --outr-100: #EB5A3C;
+  --outr-90:  #ED6B50;
+  --outr-30:  #F9CEC5;
+  --outr-10:  #FDEEEB;
+
+  /* Primary Color / Pompadour */
+  --pomp-100: #6E1946;
+  --pomp-30:  #D4BAC8;
+  --pomp-10:  #F0E8EC;
+
+  --romantic: #FAC39B;          /* Primary Color / Romantic / 100 */
+  --guardsman: #A52C38;         /* Primary Color / Guardsman Red / 100 */
+  --shadow-green: #91B9B4;      /* Primary Color / Shadow Green / 100 */
+  --carrot: #FF9619;            /* Primary Color / Carrot Orange / 100 */
+
+  /* Neutrals & accents */
+  --white: #FFFFFF;
+  --white-smoke: #F3F3F3;
+  --brown-50: #F2F0EF;
+  --green-50: #E9EEEC;
+  --green-900: #0F241D;
+  --neutral-200: #969493;
+  --neutral-300: #666462;
+  --neutral-500: #1A1714;
+  --nero: #232323;
+  --dark: #141B34;
+  --primary-50: #E7E8E9;
+
+  /* Type */
+  --font-effra: "Effra", "IBM Plex Sans Arabic", "Segoe UI", Tahoma, sans-serif;
+  --font-plex: "IBM Plex Sans Arabic", "Effra", "Segoe UI", Tahoma, sans-serif;
+  --w-bold: 700;
+  --w-regular: 400;
+
+  /* Radii */
+  --r-4: 4px;
+  --r-6: 6.355px;
+  --r-8: 8px;
+
+  /* ---------- Motion (shared scale for every micro-interaction) ---------- */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
+  --dur-press: 120ms;   /* button press feedback   */
+  --dur-fast: 180ms;    /* hover / small popovers  */
+  --dur-base: 240ms;    /* dropdowns, accordions   */
+  --dur-slow: 320ms;    /* modals, panels          */
+}

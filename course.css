@@ -1,0 +1,156 @@
+/* ============================================================
+   Course View (18:5319) — تفاصيل الدورة
+   ============================================================ */
+
+/* Main panel (18:5833) */
+.cv-panel {
+  position: relative; z-index: 4;
+  width: 1322px; height: 1472px; margin: -94px 0 0 88px;
+  background: var(--white); border-radius: var(--r-4);
+  padding: 40px; display: flex; flex-direction: column; align-items: flex-end;
+  overflow: hidden;
+}
+.cv-panel__inner { display: flex; flex-direction: column; gap: 64px; align-items: flex-start; width: 100%; }
+.cv-panel__top { display: flex; flex-direction: column; gap: 40px; align-items: flex-end; width: 100%; }
+
+/* Section title + divider (18:5836 / 18:5867) */
+.cv-sec { display: flex; flex-direction: column; gap: 24px; align-items: flex-end; width: 1238px; }
+.cv-sec--wide { width: 100%; }
+.cv-sec__t { font-size: 24px; font-weight: var(--w-bold); color: var(--tangaroa-100); line-height: 1.627; text-align: right; width: 100%; }
+.cv-rule { width: 100%; height: 1px; background: var(--tangaroa-10); }
+
+/* Intro (18:5839) — Arabic copy flows RTL inside the LTR canvas */
+.cv-intro { display: flex; flex-direction: column; gap: 16px; align-items: flex-end; width: 100%; }
+.cv-intro__h { font-size: 16px; font-weight: var(--w-bold); color: #6F7E87; line-height: 1.627; text-align: right; width: 100%; }
+.cv-intro__p { font-size: 16px; font-weight: var(--w-regular); color: var(--tangaroa-100); line-height: 24px; text-align: justify; width: 100%; direction: rtl; }
+
+/* Meta row (18:5842) */
+.cv-meta { display: flex; gap: 64px; align-items: center; }
+.cv-meta__item { display: flex; gap: 16px; align-items: center; }
+.cv-meta__txt { display: flex; flex-direction: column; align-items: flex-end; text-align: right; }
+.cv-meta__k { font-size: 14px; font-weight: var(--w-regular); color: var(--tangaroa-100); line-height: 1.627; }
+.cv-meta__v { font-size: 16px; font-weight: var(--w-bold); color: var(--tangaroa-100); line-height: 1.627; }
+.cv-meta__ico { padding: 16px; border-radius: 2px; display: flex; align-items: center; }
+.cv-meta__ico img { width: auto; height: auto; max-width: 24px; max-height: 24px; }
+.cv-meta__ico--lang { background: #F4F8F8; }
+.cv-meta__ico--type { background: #FFF5E8; }
+.cv-meta__ico--time { background: #F0E8EC; }
+.cv-meta__ico--age  { background: var(--outr-10); }
+
+/* Curriculum accordion (18:5871) */
+.cv-curric { display: flex; flex-direction: column; gap: 24px; align-items: flex-end; width: 1123px; }
+.cv-week { display: flex; flex-direction: column; gap: 8px; align-items: flex-end; width: 100%; }
+.cv-week__head { display: flex; align-items: center; justify-content: space-between; width: 100%;
+  background: none; border: 0; padding: 0; font: inherit; color: inherit; cursor: pointer; text-align: inherit; }
+.cv-week__title { display: flex; gap: 32px; align-items: center; }
+.cv-week__t { font-size: 18px; font-weight: var(--w-bold); color: var(--tangaroa-100); line-height: 1.627; text-align: right; white-space: pre; }
+.cv-week__num {
+  display: flex; align-items: center; justify-content: center;
+  width: 56px; padding: 16px; border-radius: 100px;
+  font-size: 20px; font-weight: var(--w-bold); line-height: 24px; text-align: center;
+  background: var(--tangaroa-10); color: var(--tangaroa-100);
+}
+.cv-week__num--active { background: var(--outr-10); color: var(--outr-100); }
+.cv-chev { width: 24px; height: 24px; cursor: pointer; transition: transform .2s ease; }
+.cv-chev img { width: 13.06px; height: 7.59px; }
+.cv-week.is-open .cv-chev { transform: rotate(180deg); }
+
+.cv-week__body { display: none; flex-direction: column; gap: 16px; align-items: flex-end; padding: 0 96px; position: relative; width: 100%; }
+.cv-week.is-open .cv-week__body { display: flex; }
+.cv-lesson { display: flex; gap: 16px; align-items: center; justify-content: flex-end; width: 100%; }
+.cv-lesson__d { font-size: 16px; color: var(--tangaroa-100); line-height: 1.627; white-space: nowrap; }
+.cv-lesson__dot { width: 8px; height: 8px; border-radius: 100px; background: var(--tangaroa-10); flex-shrink: 0; }
+.cv-lesson__t { font-size: 16px; color: var(--tangaroa-100); line-height: 1.627; text-align: right; white-space: nowrap; }
+.cv-lesson__ico { width: 20px; height: 20px; flex-shrink: 0; }
+.cv-lesson__ico img { width: auto; height: auto; max-width: 20px; max-height: 20px; }
+
+/* Decorative vertical strips (18:5937)
+   Figma absolute position = page x -188, y 903 → panel-relative (-276, 634) */
+.cv-strips {
+  position: absolute; left: -276px; top: 634px; width: 364px; height: 1021px;
+  overflow: hidden; pointer-events: none; z-index: 0;
+}
+.cv-strips img {
+  position: absolute; left: 50%; top: 50%;
+  width: 1021px; height: 364px;
+  transform: translate(-50%, -50%) rotate(90deg) scaleY(-1);
+}
+
+/* ---------- Right column (18:5951) ---------- */
+.cv-side { position: absolute; z-index: 4; top: 269px; left: 1434px; width: 398px; height: 0; }
+.cv-course { position: absolute; top: 0; left: 0; width: 398px; background: var(--white); border-radius: var(--r-4); padding: 32px; }
+
+.cv-course { background: var(--white); border-radius: var(--r-4); padding: 32px; }
+.cv-course__art { position: relative; height: 314px; width: 100%; overflow: hidden; }
+.cv-course__art img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.cv-course__grad { position: absolute; inset: 0;
+  background: linear-gradient(143.744deg, rgba(16,24,32,0) 9.6334%, rgba(16,24,32,.7) 78.088%); }
+.cv-play {
+  position: absolute; left: 50%; top: 129px; transform: translate(-50%, -50%);
+  width: 56px; height: 56px;
+  background: var(--outr-100); border: 9px solid rgba(235,90,60,.4);
+  border-radius: 1000px; padding: 0; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: transform var(--dur-press) var(--ease-out);
+}
+.cv-play:hover { transform: translate(-50%, -50%) scale(1.06); }
+.cv-play svg { width: 16px; height: 18px; display: block; }
+.cv-course__txt { display: flex; flex-direction: column; gap: 12px; align-items: flex-end; text-align: right; margin-top: 24px; }
+.cv-course__t { font-size: 18px; font-weight: var(--w-bold); color: var(--tangaroa-100); line-height: normal; text-align: right; width: 100%; }
+.cv-course__e { font-size: 14px; color: var(--tangaroa-80); line-height: normal; text-align: right; width: 100%; }
+.cv-course__meta { display: flex; gap: 8px; align-items: center; justify-content: flex-end; margin-top: 24px; width: 100%; }
+.cv-course__seg { display: flex; gap: 8px; align-items: center; justify-content: flex-end; }
+.cv-course__mtxt { font-size: 14px; color: var(--tangaroa-100); line-height: normal; white-space: nowrap; }
+.cv-course__clock { width: 16px; height: 16px; display: flex; align-items: center; justify-content: center; }
+.cv-course__clock img { width: 14.333px; height: 14.333px; }
+.cv-course__bar { font-size: 14px; color: var(--tangaroa-20, #CFD4D7); }
+.cv-course__cta {
+  margin-top: 24px; width: 100%; height: 48px; border: 0; border-radius: var(--r-4);
+  background: var(--outr-90); color: var(--outr-10);
+  font-family: var(--font-effra); font-weight: var(--w-bold); font-size: 16px; cursor: pointer;
+}
+.cv-course__cta:hover { background: var(--outr-100); }
+
+/* Trainer card (18:6005) — Figma top 886 */
+.cv-trainer { position: absolute; top: 617px; left: 0; width: 398px; background: var(--white); border-radius: var(--r-4); padding: 40px;
+  display: flex; flex-direction: column; gap: 32px; align-items: center; }
+.cv-trainer__h { font-size: 20px; font-weight: var(--w-bold); color: var(--green-900); line-height: 24px; text-align: center; }
+.cv-trainer__body { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; }
+.cv-trainer__col { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.cv-trainer__av { width: 110px; height: 110px; border-radius: 780.142px; overflow: hidden;
+  background: var(--tangaroa-100); border: 3.901px solid var(--white); position: relative; }
+.cv-trainer__av img { position: absolute; left: 50%; top: calc(50% + 31.43px); transform: translate(-50%, -50%);
+  width: 212.143px; height: 212.143px; object-fit: cover; }
+.cv-trainer__id { display: flex; flex-direction: column; gap: 12px; align-items: center; }
+.cv-trainer__name { font-size: 20px; font-weight: var(--w-bold); color: var(--green-900); text-align: center; }
+.cv-trainer__role { font-size: 14px; color: rgba(0,0,0,.6); text-align: center; }
+.cv-trainer__quote { font-size: 14px; color: rgba(0,0,0,.6); line-height: 18px; text-align: center; white-space: nowrap; }
+.cv-trainer__btn { width: 100%; height: 48px; border: 0; border-radius: var(--r-4); background: var(--outr-10);
+  color: var(--outr-100); font-family: var(--font-effra); font-weight: var(--w-bold); font-size: 16px; cursor: pointer; }
+.cv-trainer__btn:hover { background: var(--outr-30); }
+
+/* Reviews (18:5971) — Figma top 1364 */
+.cv-reviews { position: absolute; top: 1095px; left: 0; width: 398px; display: flex; flex-direction: column; gap: 24px; align-items: flex-start; }
+.cv-reviews__h { font-size: 16px; font-weight: var(--w-bold); color: var(--tangaroa-100); line-height: 1.627; text-align: right; width: 100%; }
+.cv-reviews__card { background: var(--white); border-radius: var(--r-4); padding: 24px;
+  display: flex; flex-direction: column; align-items: center; gap: 24px; width: 100%; }
+.cv-reviews__list { display: flex; flex-direction: column; gap: 16px; align-items: flex-start; width: 100%; }
+.cv-review { display: flex; gap: 16px; align-items: center; justify-content: flex-end; width: 100%; position: relative; }
+.cv-review__txt { display: flex; flex: 1 0 0; flex-direction: column; gap: 4px; align-items: flex-end; line-height: 18px; text-align: right; min-width: 0; }
+.cv-review__n { font-size: 14px; color: var(--neutral-300); width: 100%; }
+.cv-review__t { font-size: 16px; color: var(--green-900); width: 100%; }
+.cv-review__av { width: 48px; height: 48px; border-radius: 1000px; overflow: hidden; flex-shrink: 0; }
+.cv-review__av img { width: 100%; height: 100%; object-fit: cover; }
+.cv-review__badge {
+  position: absolute; left: 289px; top: 26px; width: 28px; height: 28px;
+  border-radius: 1000px; border: 2px solid var(--white); overflow: hidden;
+  display: flex; align-items: center; justify-content: center;
+}
+.cv-review__badge img { width: 16px; height: 16px; }
+.cv-review__badge--chat { background: var(--shadow-green); }
+.cv-review__badge--heart { background: #DE4949; }
+.cv-reviews__rule { width: 100%; height: 1px; background: rgba(0,0,0,.1); }
+.cv-reviews__more { display: flex; gap: 8px; align-items: center; justify-content: flex-end; cursor: pointer;
+  background: none; border: 0; padding: 0; font: inherit; color: inherit; }
+.cv-reviews__more span { font-size: 14px; line-height: 24px; color: var(--outr-100); }
+.cv-reviews__more i { width: 24px; height: 24px; display: block; transform: rotate(180deg) scaleY(-1); }
+.cv-reviews__more img { width: 24px; height: 24px; }

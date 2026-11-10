@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" href="assets/94823.svg">
+<title>المساعد الذكي — طاقم LPT</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="home.css">
+<link rel="stylesheet" href="chatbot.css">
+</head>
+<body>
+
+<div class="cb-page">
+
+  <main id="main">
+  <!-- ===== Home hero as the dimmed background (18:2133) ===== -->
+  <section class="hero">
+    <div class="strip strip--a" id="stripA" aria-hidden="true"></div>
+    <div class="strip strip--b" id="stripB" aria-hidden="true"></div>
+    <div class="hero__art"><img src="assets/bb323.png" alt=""></div>
+
+    <header class="nav">
+      <div class="nav__left">
+        <button class="btn-primary" id="loginBtn">تسجيل الدخول</button>
+        <div class="nav__lang">EN <span class="caret"><img src="assets/731ff.svg" alt=""></span></div>
+      </div>
+      <nav class="nav__links">
+        <a href="#" data-toast="قريباً: صفحة تواصل معنا">تواصل معنا</a>
+        <a href="training.html">مركز التدريب</a>
+        <a href="knowledge.html">مركز المعرفة</a>
+        <a href="hackify-portal.html">مختبر الابتكار Hackify</a>
+        <a href="#" data-toast="قريباً: عن المنصة">عن المنصة</a>
+        <a href="home.html" class="is-active">الرئيسية</a>
+      </nav>
+      <div class="nav__logo">
+        <img src="assets/94823.svg" alt="LPT" style="position:absolute;left:153px;top:0;width:101px;height:36px">
+        <img src="assets/06218.svg" alt="هيئة الأدب والنشر والترجمة" style="position:absolute;left:138px;top:44px;width:131px;height:15.425px">
+      </div>
+    </header>
+
+    <div class="hero__copy">
+      <div class="hero__headline">
+        <h2 class="hero__h1">تمكين صناعة اللغة</h2>
+        <p class="hero__h2">بالذكاء الاصطناعي والابتكار</p>
+      </div>
+      <p class="hero__p">منصة LPT هي بيئة رقمية ذكية تدعم الناشرين والمترجمين والمبدعين من خلال أدوات قائمة على الذكاء الاصطناعي، ودورات تدريبية متخصصة، ومساحات للتجريب والتطوير.</p>
+      <button class="btn-primary btn-primary--fill" data-goto="home.html">استكشف المنصة</button>
+    </div>
+  </section>
+
+  </main>
+
+  <!-- 18:2407 dim overlay -->
+  <div class="cb-overlay"></div>
+
+  <!-- ===== 18:2441 Chat panel ===== -->
+  <section class="cb-panel" id="cbPanel" data-chat-panel role="dialog" aria-modal="false" aria-labelledby="cbTitle">
+    <div class="cb-panel__deco"><img src="assets/fc762.svg" alt=""></div>
+
+    <!-- 18:2456 header -->
+    <div class="cb-head">
+      <div class="cb-head__tools">
+        <button type="button" class="cb-head__tool" id="cbClose" aria-label="إغلاق"><img src="assets/14ab1.svg" alt=""></button>
+        <button type="button" class="cb-head__tool" data-chat-expand aria-label="توسيع" aria-expanded="false"><img src="assets/cae68.svg" alt=""></button>
+      </div>
+      <div class="cb-head__title">
+        <h1 class="cb-head__t" id="cbTitle">المساعد الذكي</h1>
+        <span class="cb-head__av"><img src="assets/b49fa.svg" alt=""></span>
+      </div>
+    </div>
+
+    <!-- 18:2495 empty state -->
+    <div class="cb-intro" id="cbIntro">
+      <span class="cb-intro__ico"><img src="assets/ca891.svg" alt=""></span>
+      <p class="cb-intro__t">اسأل عن أي شئ تريد</p>
+    </div>
+
+    <!-- 18:2498 quick questions -->
+    <div class="cb-questions" id="cbQuestions">
+      <button class="cb-question" data-q="هل توجد سياسة خاصة بالنشر أو المحتوى؟">هل توجد سياسة خاصة بالنشر أو المحتوى؟</button>
+      <button class="cb-question" data-q="أين أجد سياسات استخدام منصة LPT؟">أين أجد سياسات استخدام منصة LPT؟</button>
+      <button class="cb-question" data-q="كيف أبلغ عن محتوى مخالف أو ترجمة غير دقيقة؟">كيف أبلغ عن محتوى مخالف أو ترجمة غير دقيقة؟</button>
+    </div>
+
+    <!-- 18:2876 conversation (filled by chatbot.js) -->
+    <div class="cb-thread" id="cbThread" role="log" aria-live="polite" aria-relevant="additions" aria-atomic="false"></div>
+
+    <!-- 18:2505 input row -->
+    <div class="cb-input-row">
+      <button class="cb-send" id="cbSend" aria-label="إرسال"><img src="assets/3f82b.svg" alt=""></button>
+      <label class="sr-only" for="cbInput">اكتب رسالتك للمساعد الذكي</label>
+      <input class="cb-input" id="cbInput" type="text" placeholder="اكتب هنا...">
+    </div>
+  </section>
+
+  <!-- 18:2409 FAB -->
+  <button class="cb-fab" id="cbFab" data-chat-fab aria-label="المساعد الذكي"><img src="assets/cacf3.svg" alt=""></button>
+</div>
+
+<!-- login overlay (shared) -->
+<div class="overlay" id="loginOverlay" role="dialog" aria-modal="true" aria-labelledby="loginTitle">
+  <div class="credentials">
+    <div class="credentials__head">
+      <button type="button" class="close" data-close="loginOverlay" aria-label="إغلاق">✕</button>
+      <div class="credentials__logo"><img src="assets/94823.svg" alt="LPT"></div>
+      <div class="credentials__title" id="loginTitle">تسجيل الدخول</div>
+      <p class="credentials__sub">ادخل إلى حسابك للوصول إلى محتوى المنصة ودورات التدريب ومختبر الابتكار.</p>
+    </div>
+    <div class="credentials__body">
+      <div class="credentials__tabs">
+        <button type="button" class="is-active" data-role="user">مستخدم نهائي</button>
+        <button type="button" data-role="admin">إدارة المنصة</button>
+      </div>
+      <div class="credentials__field">
+        <label for="loginEmail">البريد الإلكتروني</label>
+        <span class="cf-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="4.5" width="15" height="11" rx="2"/><path d="m3 6.5 7 4.5 7-4.5"/></svg></span>
+        <input type="email" id="loginEmail" placeholder="name@lpt.sa" autocomplete="email">
+      </div>
+      <div class="credentials__field">
+        <label for="loginPass">كلمة المرور</label>
+        <span class="cf-ico" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="8.5" width="12" height="8.5" rx="2"/><path d="M7 8.5V6a3 3 0 0 1 6 0v2.5"/></svg></span>
+        <input type="password" id="loginPass" placeholder="••••••••" autocomplete="current-password">
+        <button type="button" class="cf-eye" id="loginEye" aria-label="إظهار كلمة المرور" aria-pressed="false"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M2 10s3.4-5.5 8-5.5S18 10 18 10s-3.4 5.5-8 5.5S2 10 2 10Z"/><circle cx="10" cy="10" r="2.4"/></svg></button>
+      </div>
+      <div class="credentials__row">
+        <label class="credentials__check"><input type="checkbox" id="loginRemember"> تذكرني</label>
+        <button type="button" class="credentials__link" data-toast="سيتم إرسال رابط استعادة كلمة المرور إلى بريدك">نسيت كلمة المرور؟</button>
+      </div>
+      <p class="credentials__error" id="loginError" role="alert"></p>
+      <button class="credentials__submit" id="loginSubmit">دخول</button>
+      <p class="credentials__hint">نموذج تفاعلي — أي بيانات مقبولة لتجربة المسار.</p>
+    </div>
+  </div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+<script src="flow.js"></script>
+<script>
+/* Decorative arabic-letter strips (same as the home hero) */
+const V = [
+  ["3b7a0.svg","0.15% 92.44% 0.02% 0"],
+  ["6e940.svg","0.72% 84.35% 0.35% 9%"],
+  ["0a7a6.svg","0.03% 35.86% 0 50.06%"],
+  ["de9aa.svg","64.23% 62.86% 0.02% 28.52%"],
+  ["9dbb1.svg","0.17% 51.2% 0.02% 38.47%"],
+  ["b5164.svg","15.74% 57.88% 69.85% 39.7%"],
+  ["f2f99.svg","44.31% 54.7% 46.42% 39.34%"],
+  ["e9f03.svg","57.32% 73.27% 23.42% 24.97%"],
+  ["355db.svg","0.15% 73.3% 0 12.26%"],
+  ["96ed0.svg","0 14.8% 0.55% 65.73%"],
+  ["63eb1.svg","93.66% 30.89% 0.65% 65.93%"],
+  ["55a31.svg","0.15% 63.09% 23.02% 28.32%"],
+  ["d4a55.svg","0.48% 0 0 86.27%"]
+];
+for (const id of ["stripA","stripB"]) {
+  const el = document.getElementById(id);
+  el.innerHTML = V.map(([f, inset]) =>
+    `<img src="assets/${f}" alt="" style="position:absolute;inset:${inset};width:100%;height:100%;object-fit:contain">`).join("");
+}
+</script>
+<script src="chat.js"></script>
+</body>
+</html>
